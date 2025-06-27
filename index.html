@@ -269,7 +269,7 @@
         function detectBlow() {
           analyser.getByteTimeDomainData(data);
           const volume = data.reduce((a, b) => a + Math.abs(b - 128), 0) / data.length;
-          if (volume > 20) { // حساسیت
+          if (volume > 10) { // حساسیت
             blowOutCandles();
           }
           requestAnimationFrame(detectBlow);
